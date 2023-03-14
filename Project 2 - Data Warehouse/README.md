@@ -25,18 +25,18 @@ artist_id and duration), respectively.
 ### About the ELT pipeline
 
 The pipeline extracts data from an S3 bucket containing all events and songs raw data. The data is then loaded to 
-`staging_events and staging_songs` staging tables on Redshift using a SQL `COPY` statement. Finally, the data is
-transformed according to the final tables star schema using SQL statements.
+`staging_events and staging_songs` staging tables on Redshift using a SQL `COPY` statement. Finally, data is transformed
+according to the final tables star schema using SQL statements.
 
-The ELT method was chosen over ETL in order to leverage our operation speed using SQL language to transform data that
-was already loaded into the Warehouse, also avoiding expenses by executing AWS Lambda functions to transform the data
-before loading it to Redshift.
+The ELT method was chosen over ETL in order to leverage our operation speed using SQL language to transform data 
+previously loaded into the Warehouse while also reducing expenses by avoiding executing AWS Lambda functions to 
+transform data before loading it to Redshift.
 
 # Quick Start
 
 ## Install
 
-Before deploying the resources or executing ETL jobs, you need to install `boto3`, `pandas` and `psycopg2`.
+Before deploying the resources or executing ETL jobs you need to install `boto3`, `pandas` and `psycopg2`.
 
 ```bash
 pip install boto3, pandas, psycopg2
@@ -74,5 +74,5 @@ python ./etl.py
 
 You can find and execute sample SQL queries on [sample queries.ipynb](sample_queries.ipynb). Queries on the file are
 able to answer two business questions: 
-- What were the top 10 songs played in 2018?
-- What were the top 10 artists played in 2018?
+- What were the top 10 songs played in 2018;
+- What were the top 10 artists played in 2018.
